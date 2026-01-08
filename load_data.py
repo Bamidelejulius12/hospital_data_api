@@ -1,8 +1,11 @@
 import pandas as pd
 from sqlalchemy import create_engine
+import os
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 # Your database URL
-DATABASE_URL = "postgresql://hospital_capacity_database_user:fc7fWTgvmHGQvZaMpPD3ueTcPzE9KbDV@dpg-d5g2ft4hg0os73816ol0-a.virginia-postgres.render.com/hospital_capacity_database"
+DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 
 DATASETS = {
