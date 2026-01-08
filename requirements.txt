@@ -1,0 +1,12 @@
+dash
+plotly
+gradio
+pandas
+numpy
+matplotlib
+statsmodels
+uvicorn
+python-multipart
+sqlalchemy
+psycopg2-binary
+gunicorn
