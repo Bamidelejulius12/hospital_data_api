@@ -3,11 +3,14 @@ from fastapi.responses import StreamingResponse
 from sqlalchemy import create_engine, text
 import pandas as pd
 import io
+import os
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 app = FastAPI(title="Hospital Capacity API")
 
 # Your Render PostgreSQL URL
-DATABASE_URL = "postgresql://hospital_capacity_database_user:fc7fWTgvmHGQvZaMpPD3ueTcPzE9KbDV@dpg-d5g2ft4hg0os73816ol0-a.virginia-postgres.render.com/hospital_capacity_database"
+DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 
 @app.get("/")
