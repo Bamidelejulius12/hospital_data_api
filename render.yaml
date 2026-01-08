@@ -3,6 +3,7 @@ services:
     name: hospital-capacity-api
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn api.index:app --bind 0.0.0.0:$PORT
+    startCommand: gunicorn hospital_data_api.api.index:app --bind 0.0.0.0:$PORT
     plan: free
+
 
