@@ -91,6 +91,7 @@ def download_table(table_name: str, format: str = "csv"):
     except Exception as e:
         raise HTTPException(400, str(e))
 
+import uvicorn.workers
+
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
